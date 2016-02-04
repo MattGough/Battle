@@ -3,15 +3,15 @@
 
 feature 'Enter names' do
 
-  before(:all) do
+  # before(:all) do
+  #
+  #   require 'capybara/dsl'
+  #   require 'selenium-webdriver'
+  #   include Capybara::DSL
+  #   Capybara.default_driver = :selenium
+  #
+  #   end
 
-    require 'capybara/dsl'
-    require 'selenium-webdriver'
-    include Capybara::DSL
-    Capybara.default_driver = :selenium
-
-    end
-    
   scenario 'submit names' do
     visit('/')
     fill_in :name1, with: 'Steve'
