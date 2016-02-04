@@ -13,10 +13,7 @@ feature 'Enter names' do
   #   end
 
   scenario 'submit names' do
-    visit('/')
-    fill_in :name1, with: 'Steve'
-    fill_in :name2, with: 'Dave'
-    click_button 'Submit'
+    sign_in_and_play
     expect(page).to have_content 'Steve vs. Dave'
   end
 end
