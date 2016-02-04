@@ -1,11 +1,22 @@
-require 'app.rb'
+
+
 
 feature 'Enter names' do
+
+  before(:all) do
+
+    require 'capybara/dsl'
+    require 'selenium-webdriver'
+    include Capybara::DSL
+    Capybara.default_driver = :selenium
+
+    end
+    
   scenario 'submit names' do
     visit('/')
-    fill_in :player_1_name, with: 'Steve'
-    fil_in :player_2_name, with: 'Dave'
+    fill_in :name1, with: 'Steve'
+    fill_in :name2, with: 'Dave'
     click_button 'Submit'
-    expect(page).to have_content 'Steve vs. Mittens'
+    expect(page).to have_content 'Steve vs. Dave'
   end
 end
